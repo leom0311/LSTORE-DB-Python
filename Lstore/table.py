@@ -91,6 +91,7 @@ class Table:
     def delete(self, RID):
         
         # Get the Address of the Record with the Given Primary Key
+        # error
         if RID not in self.page_directory:
             print(f"Error: Record with RID {RID} was not found in the Table.")
         address = self.page_directory[RID]
@@ -104,6 +105,7 @@ class Table:
             page = page_range.get_page(page_index)
             page.delete(data_index)
             
+        # error
         # Remove the Address from the Page Directory
         del self.page_directory[RID]
         
@@ -111,6 +113,7 @@ class Table:
     def update(self, RID, record):
         
         # Get the Address of the Record with the Given Primary Key
+        # error
         if RID not in self.page_directory:
             print(f"Error: Record with RID {RID} was not found in the Table.")
         address = self.page_directory[RID]
